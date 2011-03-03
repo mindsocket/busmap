@@ -12,7 +12,9 @@ function getData(x,y) {
 				var marker = new google.maps.Marker({
 				      position: myLatLng, 
 				      map: map, 
-				      title: dp.find("n").text() + ": " + dp.find("dt da").text() + " " + dp.find("dt t").text()
+				      title: dp.find("n:first").text() + ": " + 
+				      	dp.find("dt da").text() + " " + dp.find("dt t").text() +
+				      	" " + dp.find("m nu").text() + " " + dp.find("m n").text() + " to " + dp.find("m des").text()  
 				  });   
 			});
 		}
@@ -27,7 +29,7 @@ var infowindow = new google.maps.InfoWindow();
   
 function initialize() {
   var myOptions = {
-    zoom: 11,
+    zoom: 15,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
